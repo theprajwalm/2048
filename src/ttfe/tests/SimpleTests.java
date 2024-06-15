@@ -75,5 +75,12 @@ public class SimpleTests {
 	@Test
 	public void testInitalIsSpaceLeft2(){
 		assertTrue("There is still space left", game.isSpaceLeft());
+
+		//When some sort of places are occupied.
+		game.setPieceAt(0, 3, 4);
+		game.setPieceAt(3, 3, 2);
+		assertTrue("There is still spaces left in the game",game.isSpaceLeft());
 	}
+
+
 }
