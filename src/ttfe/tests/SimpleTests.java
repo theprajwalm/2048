@@ -47,13 +47,16 @@ public class SimpleTests {
 
 	@Test
 	public void testInitialGetNummoves(){
-		assertTrue("The initial game board did not have correct ",
-		0 == game.getNumMoves());
+
 	}
 	@Test
 	public void testWrongGetNumMoves1() {
 
-		// Simulate some valid moves
+		// Simulate zero move
+		assertTrue("The initial game board did not have correct ",
+		0 == game.getNumMoves());
+
+		// Simulate one moves
 		game.performMove(MoveDirection.NORTH);
 
 
