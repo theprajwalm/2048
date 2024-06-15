@@ -45,10 +45,7 @@ public class SimpleTests {
 		4 == game.getBoardWidth());
 	}
 
-	@Test
-	public void testInitialGetNummoves(){
-
-	}
+	//Test for getnummoves
 	@Test
 	public void testWrongGetNumMoves1() {
 
@@ -62,5 +59,16 @@ public class SimpleTests {
 
 		// Verify the number of moves made is correct
 		assertEquals("Number of moves after one valid move is not correct", 1, game.getNumMoves());
+	}
+
+	@Test
+	public void testInitialGetNumPieces1(){
+		//initial pieces
+		assertEquals("Initial Pieces must be two",2,game.getNumPieces());
+
+		//adding pieces
+		game.addPiece();
+		assertEquals("After adding a Piece it should be three",3,game.getNumPieces());
+
 	}
 }
