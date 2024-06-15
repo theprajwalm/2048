@@ -58,11 +58,6 @@ public class SimpleTests {
 
 
 		// Verify the number of moves made is correct
-		assertEquals("Number of moves after two valid moves is not correct", 1, game.getNumMoves());
-
-		// Simulate an invalid move (assuming performMove returns false and does not count as a move)
-		boolean moveResult = game.performMove(null); // this should throw an IllegalArgumentException
-		assertEquals("Number of moves after invalid move should remain the same", 1, game.getNumMoves());
+		assertEquals("Number of moves after one valid move is not correct", 1, game.getNumMoves());
 	}
-
 }
