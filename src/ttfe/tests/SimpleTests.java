@@ -3,6 +3,7 @@ package ttfe.tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.beans.Transient;
 import java.util.Random;
 
 import org.junit.Before;
@@ -36,5 +37,18 @@ public class SimpleTests {
 		assertTrue("The initial game board did not have correct height",
 				4 == game.getBoardHeight());
 	}
+
+	@Test
+	public void testInitialBoardwidth() {
+		assertTrue("The initial game board did not have correct width",
+		4 == game.getBoardWidth());
+	}
+
+	@Test
+	public void testInitialGetNummoves(){
+		assertTrue("The initial game board did not have correct ",
+		0 == game.getNumMoves());
+	}
+
 
 }
