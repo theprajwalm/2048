@@ -9,6 +9,7 @@ import java.util.Random;
 import org.junit.Before;
 import org.junit.Test;
 
+import ttfe.MoveDirection;
 import ttfe.SimulatorInterface;
 import ttfe.TTFEFactory;
 
@@ -49,6 +50,21 @@ public class SimpleTests {
 		assertTrue("The initial game board did not have correct ",
 		0 == game.getNumMoves());
 	}
+	@Test
+	public void testWrongGetNumMoves1() {
+		// Initial number of moves should be 0
+		assertEquals("Initial number of moves is not zero", 0, game.getNumMoves());
 
+		// Simulate some valid moves
+		game.performMove(MoveDirection.NORTH);
+		game.performMove(MoveDirection.SOUTH);
+
+		// Verify the number of moves made is correct
+		assertEquals("Number of moves after two valid moves is not correct", 2, game.getNumMoves());
+
+		// Simulate an invalid move (assuming performMove returns false and does not count as a move)
+		boolean moveResult = game.performMove(null); // this should throw an IllegalArgumentException
+		assertEquals("Number of moves after invalid move should remain the same", 2, game.getNumMoves());
+	}
 
 }
