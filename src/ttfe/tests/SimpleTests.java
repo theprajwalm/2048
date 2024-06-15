@@ -71,4 +71,9 @@ public class SimpleTests {
 		assertEquals("After adding a Piece it should be three",3,game.getNumPieces());
 
 	}
+
+	@Test
+	public void testInitalIsSpaceLeft2(){
+		assertTrue("There is still space left", game.isSpaceLeft());
+	}
 }
