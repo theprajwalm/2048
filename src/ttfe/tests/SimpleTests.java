@@ -168,7 +168,7 @@ public class SimpleTests {
 		assertEquals("No Perform Move in East was implemented." , 4, game.getPieceAt(0, 0));
 		assertEquals("No Perform Move in East was implemented." , 16, game.getPieceAt(0, 1));
 
-		assertEquals("No Perform Move in East was implemented." , 8, game.getPieceAt(1, 0));\
+		assertEquals("No Perform Move in East was implemented." , 8, game.getPieceAt(1, 0));
 
 		assertEquals("No Perform Move in East was implemented." , 2, game.getPieceAt(2, 0));
 	}
