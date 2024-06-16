@@ -86,7 +86,7 @@ public class SimpleTests {
 		//testing for the full board
 		for (int i = 1; i < 5; i++) {
 			for (int j = 1; j < 5; j++) {
-				if (j % 2 == 0 ) {
+				if (j % 2 == 0 & i % 2 != 0) {
 					game.setPieceAt(i, j, 4);
 				} else {
 					game.setPieceAt(i, j, 2);
