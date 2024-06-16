@@ -96,7 +96,7 @@ public class SimpleTests {
 	public void testWrongMovepossible1(){
 		for (int i = 0; i < game.getBoardHeight(); i++) {
 			for (int j = 0; j < game.getBoardWidth(); j++) {
-				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
+				game.setPieceAt(i, j, 2);
 			}
 		}
 		assertFalse("There is move possible",game.isMovePossible());
@@ -104,6 +104,6 @@ public class SimpleTests {
 
 	@Test
 	public void testWrongPerformMove1(){
-
+		assertTrue("", game.performMove(MoveDirection NORTH);
 	}
 }
