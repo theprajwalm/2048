@@ -89,7 +89,7 @@ public class SimpleTests {
 				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
 			}
 		}
-		assertTrue("There is no more space left in the board", game.isSpaceLeft());
+		assertFalse("There is no more space left in the board", game.isSpaceLeft());
 	}
 
 	@Test
