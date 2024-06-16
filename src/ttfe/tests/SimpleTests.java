@@ -107,6 +107,6 @@ public class SimpleTests {
 				}
 			}
 		}
-		assertTrue("There is no place to move",game.isMovePossible());
+		assertFalse("There is move possible",game.isMovePossible());
 	}
 }
