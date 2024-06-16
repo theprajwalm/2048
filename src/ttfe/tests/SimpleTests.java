@@ -2,6 +2,7 @@ package ttfe.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import java.beans.Transient;
@@ -108,8 +109,66 @@ public class SimpleTests {
 		assertFalse("There is move possible",game.isMovePossible());
 	}
 
+	//if the direction is null
 	@Test
-	public void testWrongPerformMove1(){
-		assertTrue("A move was not performed.", game.performMove(MoveDirection.NORTH));
+	public void testWrongPerformMove1() {
+		// Attempt to perform a move with a null direction and expect an IllegalArgumentException
+		assertThrows("Performing a move with null direction should throw an IllegalArgumentException",
+			IllegalArgumentException.class, () -> {
+				game.performMove(null);
+			});
+	}
+
+	//if the direction is performed south
+	@Test
+	public void testSouthPerformMove(){
+		game.setPieceAt(0, 0, 2);
+		game.setPieceAt(1, 0, 2);
+		game.setPieceAt(2, 0, 2);
+		game.setPieceAt(3, 0, 4);
+		game.performMove(MoveDirection.SOUTH);
+		assertEquals("No Perform Move in south was implemented." , 2, game.getPieceAt(1, 0));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(2, 0));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(3, 0));
+	}
+
+	//if the direction is North
+	@Test
+	public void testNorthPerformMove(){
+		game.setPieceAt(0, 0, 4);
+		game.setPieceAt(1, 0, 2);
+		game.setPieceAt(2, 0, 2);
+		game.setPieceAt(3, 0, 2);
+
+		game.performMove(MoveDirection.NORTH);
+		assertEquals("No Perform Move in North was implemented." , 4, game.getPieceAt(0, 0));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(1, 0));
+		assertEquals("No Perform Move in south was implemented." , 2, game.getPieceAt(2, 0));
+	}
+
+	//if the direction is East
+	@Test
+	public void testEastPerformMove(){
+		game.setPieceAt(0, 0, 2);
+		game.setPieceAt(0, 1, 2);
+		game.setPieceAt(0, 2, 2);
+		game.setPieceAt(0, 3, 4);
+		game.performMove(MoveDirection.EAST);
+		assertEquals("No Perform Move in south was implemented." , 2, game.getPieceAt(0, 1));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(0, 2));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(0, 3));
+	}
+
+	//if the direction is West
+	@Test
+	public void testWestPerformMove(){
+		game.setPieceAt(0, 0, 4);
+		game.setPieceAt(0, 1, 2);
+		game.setPieceAt(0, 2, 2);
+		game.setPieceAt(0, 3, 2);
+		game.performMove(MoveDirection.WEST);
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(0, 0));
+		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(0, 1));
+		assertEquals("No Perform Move in south was implemented." , 2, game.getPieceAt(0, 2));
 	}
 }
