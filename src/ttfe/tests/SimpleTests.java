@@ -171,4 +171,14 @@ public class SimpleTests {
 		assertEquals("No Perform Move in south was implemented." , 4, game.getPieceAt(0, 1));
 		assertEquals("No Perform Move in south was implemented." , 2, game.getPieceAt(0, 2));
 	}
+
+	@Test
+	public void testWrongPoints1(){
+		assertEquals("Initial game points should be zero", 0,game.getPoints());
+		game.performMove(MoveDirection.SOUTH);
+		game.performMove(MoveDirection.EAST);
+		game.performMove(MoveDirection.NORTH);
+		game.performMove(MoveDirection.WEST);
+		assertTrue("After some moves points should increase", game.getPoints() > 0);
+	}
 }
