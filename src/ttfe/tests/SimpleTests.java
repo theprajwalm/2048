@@ -86,11 +86,7 @@ public class SimpleTests {
 		//testing for the full board
 		for (int i = 1; i < 5; i++) {
 			for (int j = 1; j < 5; j++) {
-				if (j % 2 == 0 & i % 2 != 0) {
-					game.setPieceAt(i, j, 4);
-				} else {
-					game.setPieceAt(i, j, 2);
-				}
+				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
 			}
 		}
 		assertTrue("There is no more space left in the board", game.isSpaceLeft());
@@ -100,11 +96,7 @@ public class SimpleTests {
 	public void testWrongMovepossible1(){
 		for (int i = 1; i < 5; i++) {
 			for (int j = 1; j < 5; j++) {
-				if (j % 2 == 0 & i % 2 != 0) {
-					game.setPieceAt(i, j, 4);
-				} else {
-					game.setPieceAt(i, j, 2);
-				}
+				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
 			}
 		}
 		assertFalse("There is move possible",game.isMovePossible());
