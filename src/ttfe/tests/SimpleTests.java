@@ -75,6 +75,26 @@ public class SimpleTests {
 	}
 
 	@Test
+	public void testWrongAddPiece1() {
+		// Fill the board completely
+		for (int x = 0; x < game.getBoardWidth(); x++) {
+			for (int y = 0; y < game.getBoardHeight(); y++) {
+				game.setPieceAt(x, y, 2); // Setting each position with a piece (value 2)
+			}
+		}
+		
+		// Verify the board is full
+		assertEquals("The number of pieces should equal the number of tiles on the board", 
+			game.getBoardWidth() * game.getBoardHeight(), game.getNumPieces());
+
+		// Attempt to add a piece and expect an IllegalStateException
+		assertThrows("Adding a piece to a full board should throw an IllegalStateException",
+			IllegalStateException.class, () -> {
+				game.addPiece();
+			});
+	}
+
+	@Test
 	public void testInitalIsSpaceLeft(){
 		//when board is empty.
 		assertTrue("There is still space left", game.isSpaceLeft());
