@@ -74,15 +74,21 @@ public class SimpleTests {
 	}
 
 	@Test
-	public void testInitalIsSpaceLeft2(){
+	public void testInitalIsSpaceLeft(){
 		//when board is empty.
 		assertTrue("There is still space left", game.isSpaceLeft());
+	}
 
+	@Test
+	public void testPartialIsSpaceLeft(){
 		//When some sort of places are occupied.
 		game.setPieceAt(0, 3, 4);
 		game.setPieceAt(3, 3, 2);
 		assertTrue("There is still spaces left in the game",game.isSpaceLeft());
+	}
 
+	@Test
+	public void testFullIsSpaceLeft(){
 		//testing for the full board
 		for (int i = 1; i < 5; i++) {
 			for (int j = 1; j < 5; j++) {
@@ -104,6 +110,6 @@ public class SimpleTests {
 
 	@Test
 	public void testWrongPerformMove1(){
-		assertTrue("", game.performMove(MoveDirection NORTH);
+		assertTrue("A move was not performed.", game.performMove(MoveDirection.NORTH));
 	}
 }
