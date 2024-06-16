@@ -1,6 +1,7 @@
 package ttfe.tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.beans.Transient;
@@ -74,13 +75,24 @@ public class SimpleTests {
 
 	@Test
 	public void testInitalIsSpaceLeft2(){
+		//when board is empty.
 		assertTrue("There is still space left", game.isSpaceLeft());
 
 		//When some sort of places are occupied.
 		game.setPieceAt(0, 3, 4);
 		game.setPieceAt(3, 3, 2);
 		assertTrue("There is still spaces left in the game",game.isSpaceLeft());
+
+		//testing for the full board
+		for (int i = 1; i < 5; i++) {
+			for (int j = 1; j < 5; j++) {
+				if (j % 2 == 0 ) {
+					game.setPieceAt(i, j, 4);
+				} else {
+					game.setPieceAt(i, j, 2);
+				}
+			}
+		}
+		assertFalse("There is no more space left in the board", game.isSpaceLeft());
 	}
-
-
 }
