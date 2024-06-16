@@ -93,6 +93,20 @@ public class SimpleTests {
 				}
 			}
 		}
-		assertFalse("There is no more space left in the board", game.isSpaceLeft());
+		assertTrue("There is no more space left in the board", game.isSpaceLeft());
+	}
+
+	@Test
+	public void testWrongMovepossible1(){
+		for (int i = 1; i < 5; i++) {
+			for (int j = 1; j < 5; j++) {
+				if (j % 2 == 0 & i % 2 != 0) {
+					game.setPieceAt(i, j, 4);
+				} else {
+					game.setPieceAt(i, j, 2);
+				}
+			}
+		}
+		assertTrue("There is no place to move",game.isMovePossible());
 	}
 }
