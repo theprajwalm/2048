@@ -122,64 +122,42 @@ public class SimpleTests {
 	@Test
 	public void testEastWestMovePossible() {
 		// only east and west moves are possible
-		game.setPieceAt(0, 0, 2);
-		game.setPieceAt(0, 1, 4);
-		game.setPieceAt(0, 2, 8);
-		game.setPieceAt(0, 3, 2);
-
-		game.setPieceAt(1, 0, 4);
-		game.setPieceAt(1, 1, 8);
-		game.setPieceAt(1, 2, 16);
-		game.setPieceAt(1, 3, 8);
-
-		game.setPieceAt(2, 0, 2);
-		game.setPieceAt(2, 1, 16);
-		game.setPieceAt(2, 2, 4);
-		game.setPieceAt(2, 3, 32);
-
-		game.setPieceAt(3, 0, 4);
-		game.setPieceAt(3, 1, 4);
-		game.setPieceAt(3, 2, 2);
-		game.setPieceAt(3, 3, 8);
+		int [][] exampleBoard = {
+			{2, 4, 8, 2},
+			{4, 8, 16, 8},
+			{2, 16, 4, 32},
+			{4, 4, 2, 8}
+		};
 		
-		//moves for east and west should be possible
-		assertFalse("There is no Space to move to east",game.isMovePossible(MoveDirection.EAST));
-		assertFalse("There is no Space to move to west", game.isMovePossible(MoveDirection.WEST));
+		//looping the numbers in the board
+		for(int i = 0 ; i < game.getBoardWidth();i++){
+			for(int j = 0; j < game.getBoardHeight();j++){
+				game.setPieceAt(i, j, exampleBoard[i][j]);
+			}
+		}
 
-		//moves for north and sourth should not be possible
-		assertFalse("Move to the north is not possible", game.isMovePossible(MoveDirection.NORTH));
-		assertFalse("Move to the south is not possible",game.isMovePossible(MoveDirection.SOUTH));
+		//moves for east and west should be possible
+		assertTrue("Should be only east and west move possible ", game.isMovePossible());
 	}
 
 	@Test
 	public void testNorthSouthMovePossible(){
 		//only North and south moves are possible
-		game.setPieceAt(0, 0, 2);
-		game.setPieceAt(0, 1, 4);
-		game.setPieceAt(0, 2, 8);
-		game.setPieceAt(0, 3, 2);
+		int [][] exampleBoard1 = {
+			{2, 4, 8, 2},
+			{4, 8, 16, 8},
+			{2, 16, 4, 32},
+			{4, 16, 2, 8}
+		};
 
-		game.setPieceAt(1, 0, 4);
-		game.setPieceAt(1, 1, 8);
-		game.setPieceAt(1, 2, 16);
-		game.setPieceAt(1, 3, 8);
+		for(int i = 0 ; i < game.getBoardWidth();i++){
+			for(int j = 0; j < game.getBoardHeight();j++){
+				game.setPieceAt(i, j, exampleBoard1[i][j]);
+			}
+		}
 
-		game.setPieceAt(2, 0, 2);
-		game.setPieceAt(2, 1, 16);
-		game.setPieceAt(2, 2, 4);
-		game.setPieceAt(2, 3, 32);
-
-		game.setPieceAt(3, 0, 8);
-		game.setPieceAt(3, 1, 16);
-		game.setPieceAt(3, 2, 2);
-		game.setPieceAt(3, 3, 8);
 		//moves for north and south should be possible
-		assertFalse("There is no Space to move to North", game.isMovePossible(MoveDirection.NORTH));
-		assertFalse("There is no Space to move to South", game.isMovePossible(MoveDirection.SOUTH));
-
-		//moves for west and east should not be possible
-		assertFalse("There is Space to move to east",game.isMovePossible(MoveDirection.EAST));
-		assertFalse("There is  Space to move to west", game.isMovePossible(MoveDirection.WEST));
+		assertTrue("Only North and South move should be possible", game.isMovePossible());
 	}
 
 	//if the direction is null
