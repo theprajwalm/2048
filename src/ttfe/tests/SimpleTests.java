@@ -209,7 +209,7 @@ public class SimpleTests {
 		assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(0, 2));
 		assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(0, 3));
 
-		assertEqprog2uals("Perform Move in East was not implemented correctly.", 0, game.getPieceAt(1, 0));
+		assertEquals("Perform Move in East was not implemented correctly.", 0, game.getPieceAt(1, 0));
 		assertEquals("Perform Move in East was not implemented correctly.", 0, game.getPieceAt(1, 1));
 		assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(1, 2));
 		assertEquals("Perform Move in East was not implemented correctly.", 8, game.getPieceAt(1, 3));
