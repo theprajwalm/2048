@@ -123,21 +123,24 @@ public class SimpleTests {
 	public void testEastWestMovePossible() {
 		// only east and west moves are possible
 		game.setPieceAt(0, 0, 2);
-		game.setPieceAt(0, 1, 0);
-		game.setPieceAt(0, 2, 2);
-		game.setPieceAt(0, 3, 0);
+		game.setPieceAt(0, 1, 4);
+		game.setPieceAt(0, 2, 8);
+		game.setPieceAt(0, 3, 2);
+
 		game.setPieceAt(1, 0, 4);
-		game.setPieceAt(1, 1, 0);
-		game.setPieceAt(1, 2, 4);
-		game.setPieceAt(1, 3, 0);
+		game.setPieceAt(1, 1, 8);
+		game.setPieceAt(1, 2, 16);
+		game.setPieceAt(1, 3, 8);
+
 		game.setPieceAt(2, 0, 2);
-		game.setPieceAt(2, 1, 0);
-		game.setPieceAt(2, 2, 2);
-		game.setPieceAt(2, 3, 0);
+		game.setPieceAt(2, 1, 16);
+		game.setPieceAt(2, 2, 4);
+		game.setPieceAt(2, 3, 32);
+
 		game.setPieceAt(3, 0, 4);
-		game.setPieceAt(3, 1, 0);
-		game.setPieceAt(3, 2, 4);
-		game.setPieceAt(3, 3, 0);
+		game.setPieceAt(3, 1, 4);
+		game.setPieceAt(3, 2, 2);
+		game.setPieceAt(3, 3, 8);
 		
 		//moves for east and west should be possible
 		assertFalse("There is no Space to move to east",game.isMovePossible(MoveDirection.EAST));
@@ -152,22 +155,24 @@ public class SimpleTests {
 	public void testNorthSouthMovePossible(){
 		//only North and south moves are possible
 		game.setPieceAt(0, 0, 2);
-		game.setPieceAt(1, 0, 0);
-		game.setPieceAt(2, 0, 2);
-		game.setPieceAt(3, 0, 0);
 		game.setPieceAt(0, 1, 4);
-		game.setPieceAt(1, 1, 0);
-		game.setPieceAt(2, 1, 4);
-		game.setPieceAt(3, 1, 0);
-		game.setPieceAt(0, 2, 2);
-		game.setPieceAt(1, 2, 0);
-		game.setPieceAt(2, 2, 2);
-		game.setPieceAt(3, 2, 0);
-		game.setPieceAt(0, 3, 4);
-		game.setPieceAt(1, 3, 0);
-		game.setPieceAt(2, 3, 4);
-		game.setPieceAt(3, 3, 0);
+		game.setPieceAt(0, 2, 8);
+		game.setPieceAt(0, 3, 2);
 
+		game.setPieceAt(1, 0, 4);
+		game.setPieceAt(1, 1, 8);
+		game.setPieceAt(1, 2, 16);
+		game.setPieceAt(1, 3, 8);
+
+		game.setPieceAt(2, 0, 2);
+		game.setPieceAt(2, 1, 16);
+		game.setPieceAt(2, 2, 4);
+		game.setPieceAt(2, 3, 32);
+
+		game.setPieceAt(3, 0, 8);
+		game.setPieceAt(3, 1, 16);
+		game.setPieceAt(3, 2, 2);
+		game.setPieceAt(3, 3, 8);
 		//moves for north and south should be possible
 		assertFalse("There is no Space to move to North", game.isMovePossible(MoveDirection.NORTH));
 		assertFalse("There is no Space to move to South", game.isMovePossible(MoveDirection.SOUTH));
