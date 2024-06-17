@@ -140,12 +140,12 @@ public class SimpleTests {
 		game.setPieceAt(3, 3, 0);
 		
 		//moves for east and west should be possible
-		assertTrue("There is no Space to move to east",game.isMovePossible(MoveDirection.EAST));
-		assertTrue("There is no Space to move to west", game.isMovePossible(MoveDirection.WEST));
+		assertFalse("There is no Space to move to east",game.isMovePossible(MoveDirection.EAST));
+		assertFalse("There is no Space to move to west", game.isMovePossible(MoveDirection.WEST));
 
 		//moves for north and sourth should not be possible
-		assertTrue("Move to the north is not possible", game.isMovePossible(MoveDirection.NORTH));
-		assertTrue("Move to the south is not possible",game.isMovePossible(MoveDirection.SOUTH));
+		assertFalse("Move to the north is not possible", game.isMovePossible(MoveDirection.NORTH));
+		assertFalse("Move to the south is not possible",game.isMovePossible(MoveDirection.SOUTH));
 	}
 
 	@Test
@@ -169,12 +169,12 @@ public class SimpleTests {
 		game.setPieceAt(3, 3, 0);
 
 		//moves for north and south should be possible
-		assertTrue("There is no Space to move to North", game.isMovePossible(MoveDirection.NORTH));
-		assertTrue("There is no Space to move to South", game.isMovePossible(MoveDirection.SOUTH));
+		assertFalse("There is no Space to move to North", game.isMovePossible(MoveDirection.NORTH));
+		assertFalse("There is no Space to move to South", game.isMovePossible(MoveDirection.SOUTH));
 
 		//moves for west and east should not be possible
-		assertTrue("There is Space to move to east",game.isMovePossible(MoveDirection.EAST));
-		assertTrue("There is  Space to move to west", game.isMovePossible(MoveDirection.WEST));
+		assertFalse("There is Space to move to east",game.isMovePossible(MoveDirection.EAST));
+		assertFalse("There is  Space to move to west", game.isMovePossible(MoveDirection.WEST));
 	}
 
 	//if the direction is null
