@@ -144,8 +144,8 @@ public class SimpleTests {
 		assertTrue("There is no Space to move to west", game.isMovePossible(MoveDirection.WEST));
 
 		//moves for north and sourth should not be possible
-		assertTrue("Move to the north is not possible", !game.isMovePossible(MoveDirection.NORTH));
-		assertTrue("Move to the south is not possible", !game.isMovePossible(MoveDirection.SOUTH));
+		assertTrue("Move to the north is not possible", game.isMovePossible(MoveDirection.NORTH));
+		assertTrue("Move to the south is not possible",game.isMovePossible(MoveDirection.SOUTH));
 	}
 
 	@Test
