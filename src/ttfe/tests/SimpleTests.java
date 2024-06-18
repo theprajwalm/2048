@@ -170,10 +170,10 @@ public class SimpleTests {
 			});
 	}
 
-	//if the direction is performed south
+	//if the direction is performed north
 	@Test
 	public void testWrongNorthPerformMove1(){
-		int [][] exampleBoard2 = {
+		int [][] performBoard = {
 			{0, 0, 0, 4},
 			{0, 0, 0, 4},
 			{0, 0, 0, 0},
@@ -182,11 +182,30 @@ public class SimpleTests {
 
 		for(int i = 0 ; i < game.getBoardWidth();i++){
 			for(int j = 0; j < game.getBoardHeight();j++){
-				game.setPieceAt(i, j, exampleBoard2[i][j]);
+				game.setPieceAt(i, j, performBoard[i][j]);
 			}
 		}
 		game.performMove(MoveDirection.NORTH);
 		assertEquals("Perform Move in North was not implemented correctly.", 8, game.getPieceAt(3, 0));
+	}
+
+	//if the direction is performed East
+	@Test
+	public void testWrongEastPerformMove1(){
+		int [][] performBoard1 = {
+			{0, 0, 4, 4},
+			{0, 0, 0, 0},
+			{0, 0, 0, 0},
+			{0, 0, 0, 0}
+		};
+
+		for(int i = 0 ; i < game.getBoardWidth();i++){
+			for(int j = 0; j < game.getBoardHeight();j++){
+				game.setPieceAt(i, j, performBoard1[i][j]);
+			}
+		}
+		game.performMove(MoveDirection.EAST);
+		assertEquals("Perform Move in East was not implemented correctly.", 8, game.getPieceAt(3, 0));
 	}
 
 
