@@ -177,7 +177,7 @@ public class SimpleTests {
 			{0, 0, 0, 4},
 			{0, 0, 0, 4},
 			{0, 0, 0, 0},
-			{0, 0, 0, 0}
+			{0, 0, 0, 0}	
 		};
 
 		for(int i = 0 ; i < game.getBoardWidth();i++){
@@ -187,6 +187,7 @@ public class SimpleTests {
 		}
 		game.performMove(MoveDirection.NORTH);
 		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
+		assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
 	}
 
 	//if the direction is performed East
@@ -206,6 +207,7 @@ public class SimpleTests {
 		}
 		game.performMove(MoveDirection.EAST);
 		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
+		assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
 	}
 
 		//if the direction is performed west
@@ -224,7 +226,9 @@ public class SimpleTests {
 				}
 			}
 			game.performMove(MoveDirection.WEST);
-			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(0, 0));		}
+			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(0, 0));
+			assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
+			}
 
 		//if the direction is performed South
 		@Test
@@ -243,7 +247,8 @@ public class SimpleTests {
 			}
 			game.performMove(MoveDirection.SOUTH);
 			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 3));
-				}	
+			assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
+			}	
 
 	@Test
 	public void testWrongPoints1(){
