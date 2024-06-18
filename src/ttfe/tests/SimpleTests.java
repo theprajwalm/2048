@@ -2,6 +2,7 @@ package ttfe.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
@@ -12,9 +13,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import ttfe.MoveDirection;
+import ttfe.PlayerInterface;
 import ttfe.SimulatorInterface;
 import ttfe.TTFEFactory;
-
+import ttfe.UserInterface;
 /**
  * This class provides a very simple example of how to write tests for this project.
  * You can implement your own tests within this class or any other class within this package.
@@ -242,4 +244,28 @@ public class SimpleTests {
 		game.performMove(MoveDirection.WEST);
 		assertTrue("After some moves points should increase", game.getPoints() > 0);
 	}
+
+
+@Test
+    public void testRun() {
+        PlayerInterface player = TTFEFactory.createPlayer(false);
+        UserInterface ui = TTFEFactory.createUserInterface(game);
+        game.run(player, ui);
+
+		assertNotNull(game);
+        // more here
+    }	
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRunNullPlayer() {
+        UserInterface ui = TTFEFactory.createUserInterface(game);
+    game.run(null, ui);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testRunNullUI() {
+        PlayerInterface player = TTFEFactory.createPlayer(false);
+        game.run(player, null);
+    }
+
 }
