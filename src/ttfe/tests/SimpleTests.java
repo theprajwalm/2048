@@ -205,7 +205,7 @@ public class SimpleTests {
 			}
 		}
 		game.performMove(MoveDirection.EAST);
-		assertEquals("Perform Move in East was not implemented correctly.", 8, game.getPieceAt(3, 0));
+		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
 	}
 
 		//if the direction is performed west
@@ -224,8 +224,7 @@ public class SimpleTests {
 				}
 			}
 			game.performMove(MoveDirection.WEST);
-			assertEquals("Perform Move in west was not implemented correctly.", 8, game.getPieceAt(0, 0));
-		}
+			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(0, 0));		}
 
 		//if the direction is performed South
 		@Test
@@ -243,8 +242,8 @@ public class SimpleTests {
 				}
 			}
 			game.performMove(MoveDirection.SOUTH);
-			assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(3, 3));
-		}	
+			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 3));
+				}	
 
 	@Test
 	public void testWrongPoints1(){
