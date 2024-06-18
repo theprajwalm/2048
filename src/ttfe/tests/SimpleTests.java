@@ -186,7 +186,7 @@ public class SimpleTests {
 			}
 		}
 		game.performMove(MoveDirection.NORTH);
-		assertEquals("Perform Move in North was not implemented correctly.", 8, game.getPieceAt(3, 0));
+		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
 	}
 
 	//if the direction is performed East
@@ -227,6 +227,7 @@ public class SimpleTests {
 			assertEquals("Perform Move in west was not implemented correctly.", 8, game.getPieceAt(0, 0));
 		}
 
+		//if the direction is performed South
 		@Test
 		public void testWrongSouthPerformMove1(){
 			int [][] performBoard = {
@@ -244,58 +245,6 @@ public class SimpleTests {
 			game.performMove(MoveDirection.SOUTH);
 			assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(3, 3));
 		}	
-	// if the direction is performed south
-	// @Test
-	// public void testWrongPerformMove1(){
-	// 	int [][] exampleBoard2 = {
-	// 		{2, 2, 2, 4},
-	// 		{2, 2, 4, 4},
-	// 		{0, 0, 2, 2},
-	// 		{0, 0, 2, 2}
-	// 	};
-
-	// 	for(int i = 0 ; i < game.getBoardWidth();i++){
-	// 		for(int j = 0; j < game.getBoardHeight();j++){
-	// 			game.setPieceAt(i, j, exampleBoard2[i][j]);
-	// 		}
-	// 	}
-	// 	game.performMove(MoveDirection.EAST);
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 2, game.getPieceAt(1, 0));
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(2, 0));
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(3, 0));
-
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(2, 1));
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 8, game.getPieceAt(3, 1));
-
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(3, 2));
-
-	// 	assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(3, 3));
-
-	// 	game.performMove(MoveDirection.SOUTH);
-	// 	assertEquals("Perform Move in South was not implemented correctly.", 4, game.getPieceAt(3, 1));
-
-	// 	assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(3, 2));
-
-	// 	assertEquals("Perform Move in South was not implemented correctly.", 2, game.getPieceAt(1, 3));
-	// 	assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(2, 3));
-	// 	assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(3, 3));
-
-	// 	game.performMove(MoveDirection.WEST);
-	// 	assertEquals("Perform Move in West was not implemented correctly.", 4, game.getPieceAt(0, 1));
-
-	// 	assertEquals("Perform Move in West was not implemented correctly.", 8, game.getPieceAt(0, 2));
-
-	// 	assertEquals("Perform Move in West was not implemented correctly.", 2, game.getPieceAt(0, 3));
-	// 	assertEquals("Perform Move in West was not implemented correctly.", 16, game.getPieceAt(1, 3));
-
-	// 	game.performMove(MoveDirection.NORTH);
-	// 	assertEquals("Perform Move in North was not implemented correctly.", 4, game.getPieceAt(0, 0));
-	// 	assertEquals("Perform Move in North was not implemented correctly.", 16,game.getPieceAt(1, 0));
-
-	// 	assertEquals("Perform Move in North was not implemented correctly.", 8, game.getPieceAt(0, 1));
-
-	// 	assertEquals("Perform Move in North was not implemented correctly.", 2, game.getPieceAt(0, 2));
-	// }
 
 	@Test
 	public void testWrongPoints1(){
