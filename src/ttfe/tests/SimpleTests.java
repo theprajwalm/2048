@@ -111,8 +111,8 @@ public class SimpleTests {
 	@Test
 	public void testFullIsSpaceLeft(){
 		//testing for the full board
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 4; j++) {
+		for (int i = 0; i < game.getBoardHeight(); i++) {
+			for (int j = 0; j < game.getBoardWidth(); j++) {
 				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
 			}
 		}
@@ -172,10 +172,10 @@ public class SimpleTests {
 
 	//if the direction is performed south
 	@Test
-	public void testWrongPerformMove1(){
+	public void testWrongNorthPerformMove1(){
 		int [][] exampleBoard2 = {
-			{2, 2, 2, 4},
-			{0, 0, 0, 0},
+			{0, 0, 0, 4},
+			{0, 0, 0, 4},
 			{0, 0, 0, 0},
 			{0, 0, 0, 0}
 		};
@@ -185,10 +185,8 @@ public class SimpleTests {
 				game.setPieceAt(i, j, exampleBoard2[i][j]);
 			}
 		}
-		game.performMove(MoveDirection.EAST);
-		assertEquals("Perform Move in East was not implemented correctly.", 2, game.getPieceAt(1, 0));
-		assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(2, 0));
-		assertEquals("Perform Move in East was not implemented correctly.", 4, game.getPieceAt(3, 0));
+		game.performMove(MoveDirection.NORTH);
+		assertEquals("Perform Move in North was not implemented correctly.", 8, game.getPieceAt(3, 0));
 	}
 
 
