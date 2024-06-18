@@ -182,17 +182,15 @@ public class SimpleTests {
 
 		for(int i = 0 ; i < game.getBoardWidth();i++){
 			for(int j = 0; j < game.getBoardHeight();j++){
-				game.setPieceAt(i, j, performBoard[i][j]);
+				game.setPieceAt(j, i, performBoard[i][j]);
 			}
 		}
 		game.performMove(MoveDirection.NORTH);
 		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
 		assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
-	}
+	
 
 	//if the direction is performed East
-	@Test
-	public void testWrongEastPerformMove1(){
 		int [][] performBoard1 = {
 			{0, 0, 4, 4},
 			{0, 0, 0, 0},
@@ -202,18 +200,16 @@ public class SimpleTests {
 
 		for(int i = 0 ; i < game.getBoardWidth();i++){
 			for(int j = 0; j < game.getBoardHeight();j++){
-				game.setPieceAt(i, j, performBoard1[i][j]);
+				game.setPieceAt(j, i, performBoard1[i][j]);
 			}
 		}
 		game.performMove(MoveDirection.EAST);
 		assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(3, 0));
 		assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
-	}
+	
 
 		//if the direction is performed west
-		@Test
-		public void testWrongWestPerformMove1(){
-			int [][] performBoard1 = {
+			int [][] performBoard2 = {
 				{0, 0, 4, 4},
 				{0, 0, 0, 0},
 				{0, 0, 0, 0},
@@ -222,18 +218,16 @@ public class SimpleTests {
 	
 			for(int i = 0 ; i < game.getBoardWidth();i++){
 				for(int j = 0; j < game.getBoardHeight();j++){
-					game.setPieceAt(i, j, performBoard1[i][j]);
+					game.setPieceAt(j, i, performBoard2[i][j]);
 				}
 			}
 			game.performMove(MoveDirection.WEST);
 			assertTrue("Perform move at North was not correct", 8 == game.getPieceAt(0, 0));
 			assertTrue("Calculation of Points was wrong", 8 == game.getPoints());
-			}
+			
 
 		//if the direction is performed South
-		@Test
-		public void testWrongSouthPerformMove1(){
-			int [][] performBoard = {
+			int [][] performBoard3 = {
 				{0, 0, 0, 4},
 				{0, 0, 0, 4},
 				{0, 0, 0, 0},
@@ -242,7 +236,7 @@ public class SimpleTests {
 	
 			for(int i = 0 ; i < game.getBoardWidth();i++){
 				for(int j = 0; j < game.getBoardHeight();j++){
-					game.setPieceAt(i, j, performBoard[i][j]);
+					game.setPieceAt(j, i, performBoard3[i][j]);
 				}
 			}
 			game.performMove(MoveDirection.SOUTH);
