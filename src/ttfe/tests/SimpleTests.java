@@ -108,16 +108,16 @@ public class SimpleTests {
 		assertTrue("There is still spaces left in the game",game.isSpaceLeft());
 	}
 
-	// @Test
-	// public void testFullIsSpaceLeft(){
-	// 	//testing for the full board
-	// 	for (int i = 1; i < 5; i++) {
-	// 		for (int j = 1; j < 5; j++) {
-	// 			game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
-	// 		}
-	// 	}
-	// 	assertFalse("There is no more space left in the board", game.isSpaceLeft());
-	// }
+	@Test
+	public void testFullIsSpaceLeft(){
+		//testing for the full board
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				game.setPieceAt(i, j, (i + j) % 2 == 0 ? 2 : 4);
+			}
+		}
+		assertFalse("There is no more space left in the board", game.isSpaceLeft());
+	}
 
 	@Test
 	public void testEastWestMovePossible() {
