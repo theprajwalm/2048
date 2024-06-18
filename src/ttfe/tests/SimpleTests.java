@@ -208,7 +208,42 @@ public class SimpleTests {
 		assertEquals("Perform Move in East was not implemented correctly.", 8, game.getPieceAt(3, 0));
 	}
 
+		//if the direction is performed west
+		@Test
+		public void testWrongWestPerformMove1(){
+			int [][] performBoard1 = {
+				{0, 0, 4, 4},
+				{0, 0, 0, 0},
+				{0, 0, 0, 0},
+				{0, 0, 0, 0}
+			};
+	
+			for(int i = 0 ; i < game.getBoardWidth();i++){
+				for(int j = 0; j < game.getBoardHeight();j++){
+					game.setPieceAt(i, j, performBoard1[i][j]);
+				}
+			}
+			game.performMove(MoveDirection.WEST);
+			assertEquals("Perform Move in west was not implemented correctly.", 8, game.getPieceAt(0, 0));
+		}
 
+		@Test
+		public void testWrongSouthPerformMove1(){
+			int [][] performBoard = {
+				{0, 0, 0, 4},
+				{0, 0, 0, 4},
+				{0, 0, 0, 0},
+				{0, 0, 0, 0}
+			};
+	
+			for(int i = 0 ; i < game.getBoardWidth();i++){
+				for(int j = 0; j < game.getBoardHeight();j++){
+					game.setPieceAt(i, j, performBoard[i][j]);
+				}
+			}
+			game.performMove(MoveDirection.SOUTH);
+			assertEquals("Perform Move in South was not implemented correctly.", 8, game.getPieceAt(3, 3));
+		}	
 	// if the direction is performed south
 	// @Test
 	// public void testWrongPerformMove1(){
