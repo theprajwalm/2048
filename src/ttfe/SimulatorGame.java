@@ -119,7 +119,12 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void setPieceAt(int x, int y, int piece) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPieceAt'");
+       if (board[x][y] != 0) {
+        throw new IllegalArgumentException("A piece exists in the given location");
+       }
+       else{
+        board[x][y] = piece; //setting the piece at given value
+       }
     }
 
 }
