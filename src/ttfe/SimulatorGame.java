@@ -17,13 +17,19 @@ public class SimulatorGame implements SimulatorInterface{
 
     //this is constructor
     public SimulatorGame(int height, int width, Random random){
-        // 
+        // test for illegal Board height
         if (height <= 0) {
             throw new IllegalArgumentException("Height is less than or equal to 0");
         }
         if (width <= 0) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
+
+        // game dimension test
+        assertEquals( "Given height is not dimensionally correct", 4, boardHeight);
+        assertEquals("Given width is not dimensionally correct", 4, boardWidth);
+
+        //intializing the value
         this.boardHeight = height;
         this.boardWidth = width;
         this.numMoves = 0;
@@ -32,8 +38,6 @@ public class SimulatorGame implements SimulatorInterface{
         this.random = random;
         this.numPieces = 2; //intial number of pieces
         this.numMoves = 0; //inital number of moves
-        assertEquals( "Given height is not dimensionally correct", 4, boardHeight);
-        assertEquals("Given width is not dimensionally correct", 4, boardWidth);
     }
 
     @Override
