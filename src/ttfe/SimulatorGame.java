@@ -1,5 +1,6 @@
 package ttfe;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
@@ -16,6 +17,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     //this is constructor
     public SimulatorGame(int height, int width, Random random){
+        // 
         if (height <= 0) {
             throw new IllegalArgumentException("Height is less than or equal to 0");
         }
@@ -30,6 +32,8 @@ public class SimulatorGame implements SimulatorInterface{
         this.random = random;
         this.numPieces = 2; //intial number of pieces
         this.numMoves = 0; //inital number of moves
+        assertEquals( "Given height is not dimensionally correct", 4, height);
+        assertEquals("Given width is not dimensionally correct", 4, width);
     }
 
     @Override
