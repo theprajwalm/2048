@@ -30,17 +30,16 @@ public class SimulatorGame implements SimulatorInterface{
         if(!isSpaceLeft()){
             assertTrue("There is no Space in the board", isSpaceLeft());
         }
-        double rand = random.nextDouble();
-        int value = (rand < 0.9) ? 2 : 4 ; // the random value generator
+        int value = (random.nextDouble() < 0.9) ? 2 : 4 ; // the random value generator
 
         int boardRandomX, boardRandomY;
 
         do {
             boardRandomX = random.nextInt(this.boardHeight);
             boardRandomY = random.nextInt(this.boardWidth);
-        } while (getPieceAt(boardRandomX, boardRandomY) != 0);
+        } while (board[boardRandomX][boardRandomY] != 0);
         
-        setPieceAt(boardRandomX, boardRandomY, value);
+        board[boardRandomX][boardRandomY] = value;
 
     }
 
@@ -59,14 +58,12 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getNumMoves() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumMoves'");
+       return numMoves;
     }
 
     @Override
     public int getNumPieces() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getNumPieces'");
+        return 
     }
 
     @Override
