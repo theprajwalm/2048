@@ -85,7 +85,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getPieceAt(int x, int y) {
-        if ((x < 0 || x > boardHeight) || ( y < 0 || y > boardWidth)){
+        if ((x < 0 || x >= boardHeight) || ( y < 0 || y >= boardWidth)){
             throw new IllegalArgumentException("A piece exists in the given location");
         }
 
@@ -124,6 +124,7 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void run(PlayerInterface player, UserInterface ui) {
         if (player == null || ui == null) {
+            throw new IllegalArgumentException("Player or UI is given null");
         }
     }
 
