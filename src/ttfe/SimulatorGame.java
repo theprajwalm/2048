@@ -32,8 +32,8 @@ public class SimulatorGame implements SimulatorInterface{
         this.random = random;
         this.numPieces = 2; //intial number of pieces
         this.numMoves = 0; //inital number of moves
-        assertEquals( "Given height is not dimensionally correct", 4, height);
-        assertEquals("Given width is not dimensionally correct", 4, width);
+        assertEquals( "Given height is not dimensionally correct", 4, boardHeight);
+        assertEquals("Given width is not dimensionally correct", 4, boardWidth);
     }
 
     @Override
