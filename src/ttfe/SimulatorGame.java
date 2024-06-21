@@ -22,7 +22,7 @@ public class SimulatorGame implements SimulatorInterface{
         this.points = 0;
         this.board = new int[height][width];
         this.random = random;
-        this.numPieces = 2; //intial number of pieces
+        this.numPieces = 0; //intial number of pieces
         this.numMoves = 0; //inital number of moves
     }
 
