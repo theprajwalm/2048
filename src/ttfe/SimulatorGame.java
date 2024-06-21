@@ -13,6 +13,7 @@ public class SimulatorGame implements SimulatorInterface{
     private int points;
     private Random random;
     private int[][] board;
+    private int numPieces;
 
     //this is constructor
     public SimulatorGame(int height, int width, Random random){
@@ -22,6 +23,8 @@ public class SimulatorGame implements SimulatorInterface{
         this.points = 0;
         this.board = new int[height][width];
         this.random = random;
+        this.numPieces = 2; //intial number of pieces
+        this.numMoves = 0; //inital number of moves
     }
 
 
@@ -63,8 +66,15 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getNumPieces() {
-        throw new UnsupportedOperationException("Unimplemented method 'getNumPieces'");
-    }
+        for (int i = 0; i < boardHeight; i++) {
+            for (int j = 0; j < boardWidth; j++) {
+                if(board[i][j] != 0){
+                    numPieces++;
+                }
+            }
+        }
+        return numPieces;
+        }
 
     @Override
     public int getPieceAt(int x, int y) {
@@ -74,8 +84,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getPoints() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPoints'");
+        return points;
     }
 
     @Override
