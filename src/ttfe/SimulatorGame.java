@@ -25,9 +25,6 @@ public class SimulatorGame implements SimulatorInterface{
         this.numPieces = 2; //intial number of pieces
         this.numMoves = 0; //inital number of moves
 
-    }
-
-    public void illegalBoardHeight(){
         if (boardHeight <= 0) {
             throw new IllegalArgumentException("Height is not less than zero");
         }
