@@ -28,7 +28,7 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void addPiece() {
         if(!isSpaceLeft()){
-            assertTrue("There is no Space in the board",isSpaceLeft());
+            assertTrue("There is no Space in the board", isSpaceLeft());
         }
         double rand = random.nextDouble();
         int value = (rand < 0.9) ? 2 : 4 ; // the random value generator
@@ -46,14 +46,12 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getBoardHeight() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBoardHeight'");
+        return boardHeight;
     }
 
     @Override
     public int getBoardWidth() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getBoardWidth'");
+        return boardWidth;
     }
 
     @Override
