@@ -63,7 +63,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getNumPieces() {
-        return 
+        throw new UnsupportedOperationException("Unimplemented method 'getNumPieces'");
     }
 
     @Override
