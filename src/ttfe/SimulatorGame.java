@@ -78,6 +78,10 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getPieceAt(int x, int y) {
+        if ((x < 0 || x > boardHeight) || ( y < 0 || y > boardWidth)){
+            throw new IllegalArgumentException("A piece exists in the given location");
+        }
+
         return board[x][y];
     }
 
@@ -119,11 +123,11 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void setPieceAt(int x, int y, int piece) {
         // TODO Auto-generated method stub
-       if ((board[x][y] != 0) || ((x < 0 || x > boardHeight) || (y < 0 || y > boardWidth))) {
+       if ((x < 0 || x > boardHeight) || (y < 0 || y > boardWidth)) {
         throw new IllegalArgumentException("A piece exists in the given location");
        }
        else{
-        board[x][y] = piece; //setting the piece at given value
+        board[x][y] = piece; //setting the piece at given location
        }
     }
 
