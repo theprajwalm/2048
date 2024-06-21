@@ -15,13 +15,13 @@ public class SimulatorGame implements SimulatorInterface{
     private int[][] board;
 
     //this is constructor
-    private SimulatorGame(int height, int width, int seed){
+    public SimulatorGame(int height, int width, Random random){
         this.boardHeight = height;
         this.boardWidth = width;
         this.numMoves = 0;
         this.points = 0;
         this.board = new int[height][width];
-        this.random = new Random(seed);
+        this.random = random;
     }
 
 
@@ -107,8 +107,8 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public void run(PlayerInterface player, UserInterface ui) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'run'");
+        if (player == null || ui == null) {
+        }
     }
 
     @Override
