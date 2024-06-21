@@ -1,11 +1,47 @@
 package ttfe;
 
-public class SimulatorGame implements SimulatorInterface {
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
+
+import java.util.Random;
+
+public class SimulatorGame implements SimulatorInterface{
+    //Board Eigenschaften
+    private int boardHeight;
+    private int boardWidth;
+    private int numMoves;
+    private int points;
+    private Random random;
+    private int[][] board;
+
+    //this is constructor
+    private SimulatorGame(int height, int width, int seed){
+        this.boardHeight = height;
+        this.boardWidth = width;
+        this.numMoves = 0;
+        this.points = 0;
+        this.board = new int[height][width];
+        this.random = new Random(seed);
+    }
+
 
     @Override
     public void addPiece() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addPiece'");
+        if(!isSpaceLeft()){
+            assertTrue("There is no Space in the board",isSpaceLeft());
+        }
+        double rand = random.nextDouble();
+        int value = (rand < 0.9) ? 2 : 4 ; // the random value generator
+
+        int boardRandomX, boardRandomY;
+
+        do {
+            boardRandomX = random.nextInt(this.boardHeight);
+            boardRandomY = random.nextInt(this.boardWidth);
+        } while (getPieceAt(boardRandomX, boardRandomY) != 0);
+        
+        setPieceAt(boardRandomX, boardRandomY, value);
+
     }
 
     @Override
@@ -79,5 +115,5 @@ public class SimulatorGame implements SimulatorInterface {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setPieceAt'");
     }
-    
+
 }
