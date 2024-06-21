@@ -78,8 +78,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getPieceAt(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPieceAt'");
+        return board[x][y];
     }
 
     @Override
