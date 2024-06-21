@@ -51,8 +51,6 @@ public class SimulatorGame implements SimulatorInterface{
         } while (board[boardRandomX][boardRandomY] != 0);
         
         board[boardRandomX][boardRandomY] = value;
-
-
     }
 
     @Override
@@ -121,7 +119,14 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public boolean isSpaceLeft() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isSpaceLeft'");
+        for (int i = 0; i < boardHeight; i++) {
+            for (int j = 0; j < boardWidth; j++) {
+                if (board[i][j] == 0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
