@@ -1,6 +1,5 @@
 package ttfe;
 
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
@@ -43,6 +42,7 @@ public class SimulatorGame implements SimulatorInterface{
         } while (board[boardRandomX][boardRandomY] != 0);
         
         board[boardRandomX][boardRandomY] = value;
+
 
     }
 
@@ -119,7 +119,7 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void setPieceAt(int x, int y, int piece) {
         // TODO Auto-generated method stub
-       if (board[x][y] != 0) {
+       if ((board[x][y] != 0) || ((x < 0 || x > boardHeight) || (y < 0 || y > boardWidth))) {
         throw new IllegalArgumentException("A piece exists in the given location");
        }
        else{
