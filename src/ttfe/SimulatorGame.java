@@ -46,6 +46,9 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getBoardHeight() {
+        if (boardHeight < 2) {
+            throw new IllegalArgumentException("Height is less than 2");
+        }
         return boardHeight;
     }
 
