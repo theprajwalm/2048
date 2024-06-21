@@ -58,7 +58,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public int getBoardWidth() {
-        if ( boardWidth < 0 || boardHeight > 0) {
+        if ( boardWidth < 0 || boardWidth > 4) {
             throw new IllegalArgumentException("Height is less than 0");
         }
         else{
