@@ -180,10 +180,6 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public void setPieceAt(int x, int y, int piece) {
         // TODO Auto-generated method stub
-        if(board[x][y] != 0)
-        {
-         throw new IllegalArgumentException("piece is overriding");
-        }
        if ((x < 0 || x >= boardHeight) || (y < 0 || y >= boardWidth)) 
        {
         throw new IllegalArgumentException("A piece exists in the given location");
