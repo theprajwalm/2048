@@ -116,20 +116,22 @@
 
         @Override
         public boolean isMovePossible() {
-            for (int i = 0; i < boardHeight; i++) {
-                for (int j = 0; j < boardWidth; j++) {
-                    if (board[i][j] == 0) {
-                        return true;
-                    }
-                    if(i > 0 && board[i][j] == board[i - 1][j]){ 
-                        return true;
-                    }
-                    if (j > 0 && board[i][j] == board[i][j-1]) {
-                        return true;
-                    }
-                }
-            }
-            return false;
+            // for (int i = 0; i < boardHeight; i++) {
+            //     for (int j = 0; j < boardWidth; j++) {
+            //         if (board[i][j] == 0) {
+            //             return true;
+            //         }
+            //         if(i > 0 && board[i][j] == board[i - 1][j]){ 
+            //             return true;
+            //         }
+            //         if (j > 0 && board[i][j] == board[i][j-1]) {
+            //             return true;
+            //         }
+            //     }
+            // }
+            // return false;
+            throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
+
         }
 
         @Override
@@ -177,7 +179,7 @@
             if (direction == null) {
                 throw new IllegalArgumentException("Invalid Direction given");
             }
-            throw new UnsupportedOperationException("Unimplemented method 'performMove'");
+            return true;
         }
 
         @Override
