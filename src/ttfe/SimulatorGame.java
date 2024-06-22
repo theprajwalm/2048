@@ -190,12 +190,12 @@
         {
             throw new IllegalArgumentException("A piece exists in the given location");
         }
-        if(piece != 2 || piece != 4 || piece != 0)
+        if(piece == 2 || piece == 4 || piece == 0)
         {
-            throw new IllegalArgumentException("Invalid piece given");
+            board[x][y] = piece; //setting the piece at given location
         }
         else{
-            board[x][y] = piece; //setting the piece at given location
+            throw new IllegalArgumentException("Invalid piece given");
             }
         }
     }
