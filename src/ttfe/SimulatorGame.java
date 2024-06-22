@@ -24,13 +24,6 @@
             if (width <= 0) {
                 throw new IllegalArgumentException("Width is less than or equal to 0");
             }
-
-            if (height != 4) {
-                throw new IllegalArgumentException("Width is less than or equal to 0");
-            }
-            if (width != 4) {
-                throw new IllegalArgumentException("Width is less than or equal to 0");
-            }
             if (random == null) {
                 throw new IllegalArgumentException("Illegal random");
             }
@@ -65,7 +58,7 @@
 
         @Override
         public int getBoardHeight() {
-            if ( boardHeight <= 0 || boardHeight > 4) {
+            if ( boardHeight <= 0) {
                 throw new IllegalArgumentException("Height is less than 0");
             }
             else{
@@ -75,7 +68,7 @@
 
         @Override
         public int getBoardWidth() {
-            if ( boardWidth <= 0 || boardWidth > 4) {
+            if ( boardWidth <= 0 ) {
                 throw new IllegalArgumentException("Height is less than 0");
             }
             else{
