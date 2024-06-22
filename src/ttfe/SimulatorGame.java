@@ -25,10 +25,10 @@ public class SimulatorGame implements SimulatorInterface{
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
 
-        if (height != 2) {
+        if (height != 4) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
-        if (width != 2) {
+        if (width != 4) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
         if (random == null) {
