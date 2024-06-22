@@ -25,10 +25,12 @@ public class SimulatorGame implements SimulatorInterface{
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
 
-        // game dimension test
-        assertEquals( "Given height is not dimensionally correct", 4, boardHeight);
-        assertEquals("Given width is not dimensionally correct", 4, boardWidth);
+        if (height == 4) {
 
+        }
+        if (width == 4) {
+        }
+        
         //intializing the value
         this.boardHeight = height;
         this.boardWidth = width;
