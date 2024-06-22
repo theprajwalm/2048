@@ -116,7 +116,20 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public boolean isMovePossible() {
-        return isSpaceLeft();
+        for (int i = 0; i < boardHeight; i++) {
+            for (int j = 0; j < boardWidth; j++) {
+                if (board[i][j] == 0) {
+                    return true;
+                }
+                if(i > 0 && board[i][j] == board[i - 1][j]){ 
+                    return true;
+                }
+                if (j > 0 && board[i][j] == board[i][j-1]) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -148,17 +161,15 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public boolean isSpaceLeft() {
-        // // TODO Auto-generated method stub
-        // for (int i = 0; i < boardHeight; i++) {
-        //     for (int j = 0; j < boardWidth; j++) {
-        //         if (board[i][j] == 0){
-        //             return true;
-        //         }
-        //     }
-        // }
-        // return false;
-        throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
-
+        // TODO Auto-generated method stub
+        for (int i = 0; i < boardHeight; i++) {
+            for (int j = 0; j < boardWidth; j++) {
+                if (board[i][j] == 0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -186,12 +197,9 @@ public class SimulatorGame implements SimulatorInterface{
        }
        if(piece != 2 || piece != 4)
        {
-        throw new IllegalArgumentException("Unvalid piece given");
+        throw new IllegalArgumentException("Invalid piece given");
        }
-       else
-       {
         board[x][y] = piece; //setting the piece at given location
-       }
     }
 
 }
