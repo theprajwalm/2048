@@ -25,10 +25,10 @@ public class SimulatorGame implements SimulatorInterface{
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
 
-        if (height != 4) {
+        if (height != 2) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
-        if (width != 4) {
+        if (width != 2) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
         if (random == null) {
@@ -146,7 +146,6 @@ public class SimulatorGame implements SimulatorInterface{
                         if (board[i][j] == 0) {
                             return true;
                         }
-
                     }
                 }
 
@@ -183,9 +182,12 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public void run(PlayerInterface player, UserInterface ui) {
+        //Exceptional Case or Illegal  case
         if (player == null || ui == null) {
             throw new IllegalArgumentException("Player or UI is given null");
         }
+
+
     }
 
     @Override

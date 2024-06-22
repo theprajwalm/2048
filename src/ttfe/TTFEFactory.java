@@ -33,6 +33,7 @@ public class TTFEFactory {
 	 */
 	public static UserInterface createUserInterface(SimulatorInterface game) {
 		return new GUI(game);
+
 	}
 
 	/**
