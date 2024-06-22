@@ -134,9 +134,6 @@ public class SimulatorGame implements SimulatorInterface{
                     }
                 }
 
-
-
-
                 break;
         
             default:
@@ -184,11 +181,11 @@ public class SimulatorGame implements SimulatorInterface{
        {
         throw new IllegalArgumentException("A piece exists in the given location");
        }
-       else if(piece != 2 || piece != 4)
+       if(piece != 2 || piece != 4)
        {
         throw new IllegalArgumentException("Unvalid piece given");
        }
-       else if(board[x][y] != 0)
+       if(board[x][y] != 0)
        {
         throw new IllegalArgumentException("piece is overriding");
        }
