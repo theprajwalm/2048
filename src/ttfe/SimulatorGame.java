@@ -18,11 +18,8 @@
         //this is constructor
         public SimulatorGame(int height, int width, Random random){
             // test for illegal Board height
-            if (height <= 0) {
-                throw new IllegalArgumentException("Height is less than or equal to 0");
-            }
-            if (width <= 0) {
-                throw new IllegalArgumentException("Width is less than or equal to 0");
+            if (height <= 2 || width <=2) {
+                throw new IllegalArgumentException("Wrong dimension given");
             }
             if (random == null) {
                 throw new IllegalArgumentException("Illegal random");
@@ -49,8 +46,8 @@
             int boardRandomX, boardRandomY;
 
             do {
-                boardRandomX = random.nextInt(this.boardHeight);
-                boardRandomY = random.nextInt(this.boardWidth);
+                boardRandomX = random.nextInt(boardHeight);
+                boardRandomY = random.nextInt(boardWidth);
             } while (board[boardRandomX][boardRandomY] != 0);
             
             board[boardRandomX][boardRandomY] = value;
