@@ -201,7 +201,8 @@ public class SimulatorGame implements SimulatorInterface{
        {
         throw new IllegalArgumentException("Invalid piece given");
        }
+       else{
         board[x][y] = piece; //setting the piece at given location
+        }
     }
-
 }
