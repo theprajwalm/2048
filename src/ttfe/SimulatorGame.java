@@ -119,14 +119,29 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public boolean isMovePossible(MoveDirection direction) {
         // TODO Auto-generated method stub
-        // switch (direction) {
-        //     case SOUTH:
-                
-        //         break;
+        if (direction == null) {
+            throw new IllegalArgumentException("Invalid direction is given");
+        }
+        switch (direction) {
+            case SOUTH:
+                // is there any space left in the south
+                for (int i = 0; i < boardHeight; i++) {
+                    for (int j = 0; j < boardWidth; j++) {
+                        if (board[i][j] == 0) {
+                            return true;
+                        }
+
+                    }
+                }
+
+
+
+
+                break;
         
-        //     default:
-        //         break;
-        // }   
+            default:
+                break;
+        }   
         throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
  
     }
