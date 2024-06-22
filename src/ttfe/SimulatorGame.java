@@ -123,8 +123,7 @@
             //     }
             // }
             // return false;
-            throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
-
+            return isMovePossible(MoveDirection.EAST) || isMovePossible(MoveDirection.NORTH) || isMovePossible(MoveDirection.WEST) || isMovePossible(MoveDirection.SOUTH);
         }
 
         @Override
