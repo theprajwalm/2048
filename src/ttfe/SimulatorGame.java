@@ -119,7 +119,16 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public boolean isMovePossible(MoveDirection direction) {
         // TODO Auto-generated method stub
+        // switch (direction) {
+        //     case SOUTH:
+                
+        //         break;
+        
+        //     default:
+        //         break;
+        // }   
         throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
+ 
     }
 
     @Override
@@ -140,6 +149,9 @@ public class SimulatorGame implements SimulatorInterface{
     @Override
     public boolean performMove(MoveDirection direction) {
         // TODO Auto-generated method stub
+        if (direction == null) {
+            throw new IllegalArgumentException("Invalid Direction given");
+        }
         throw new UnsupportedOperationException("Unimplemented method 'performMove'");
     }
 
