@@ -18,11 +18,8 @@
         //this is constructor
         public SimulatorGame(int height, int width, Random random){
             // test for illegal Board height
-            if (height <= 2 || width <=2) {
-                throw new IllegalArgumentException("Wrong dimension given");
-            }
-            if (random == null) {
-                throw new IllegalArgumentException("Illegal random");
+            if (height <= 2 || width <=2 || random == null) {
+                throw new IllegalArgumentException("Invalid Inputs given");
             }
 
             //intializing the value
@@ -177,6 +174,8 @@
             if (player == null || ui == null) {
                 throw new IllegalArgumentException("Player or UI is given null");
             }
+
+
         }
 
         @Override
