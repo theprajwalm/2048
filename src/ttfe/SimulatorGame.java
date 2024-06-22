@@ -188,6 +188,10 @@ public class SimulatorGame implements SimulatorInterface{
        {
         throw new IllegalArgumentException("Unvalid piece given");
        }
+       else if(board[x][y] != 0)
+       {
+        throw new IllegalArgumentException("piece is overriding");
+       }
        else
        {
         board[x][y] = piece; //setting the piece at given location
