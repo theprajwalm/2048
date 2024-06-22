@@ -31,6 +31,9 @@ public class SimulatorGame implements SimulatorInterface{
         if (width != 4) {
             throw new IllegalArgumentException("Width is less than or equal to 0");
         }
+        if (random == null) {
+            throw new IllegalArgumentException("Illegal random");
+        }
 
         //intializing the value
         this.boardHeight = height;
