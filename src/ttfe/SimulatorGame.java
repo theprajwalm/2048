@@ -30,7 +30,8 @@ public class SimulatorGame implements SimulatorInterface{
         }
         if (width == 4) {
         }
-        
+
+
         //intializing the value
         this.boardHeight = height;
         this.boardWidth = width;
@@ -112,8 +113,7 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public boolean isMovePossible() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
+        return isSpaceLeft();
     }
 
     @Override
@@ -124,15 +124,17 @@ public class SimulatorGame implements SimulatorInterface{
 
     @Override
     public boolean isSpaceLeft() {
-        // TODO Auto-generated method stub
-        for (int i = 0; i < boardHeight; i++) {
-            for (int j = 0; j < boardWidth; j++) {
-                if (board[i][j] == 0){
-                    return true;
-                }
-            }
-        }
-        return false;
+        // // TODO Auto-generated method stub
+        // for (int i = 0; i < boardHeight; i++) {
+        //     for (int j = 0; j < boardWidth; j++) {
+        //         if (board[i][j] == 0){
+        //             return true;
+        //         }
+        //     }
+        // }
+        // return false;
+        throw new UnsupportedOperationException("Unimplemented method 'isMovePossible'");
+
     }
 
     @Override
