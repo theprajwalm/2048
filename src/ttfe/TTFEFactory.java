@@ -20,7 +20,8 @@ public class TTFEFactory {
 			Random r) {
 		// TODO: Implement me. Return a simulator instance.
 		if(width < 2  || height < 2){
-			throw new IllegalArgumentException("Dimension is not correct");
+			throw new IllegalArgumentException
+			("Dimension is not correct");
 		}
 		
 		return new SimulatorGame(width, height, r);
