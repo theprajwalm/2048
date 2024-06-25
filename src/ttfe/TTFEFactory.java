@@ -19,6 +19,9 @@ public class TTFEFactory {
 	public static SimulatorInterface createSimulator(int width, int height,
 			Random r) {
 		// TODO: Implement me. Return a simulator instance.
+		if(width < 2  || height < 2){
+			throw new IllegalArgumentException("Dimension is not correct");
+		}
 		
 		return new SimulatorGame(width, height, r);
 	}
@@ -38,6 +41,7 @@ public class TTFEFactory {
 
 	/**
 	 * Create a 2048 player.
+	 * 
 	 * 
 	 * @param human
 	 *            Flag to indicate a human player will play the game.
