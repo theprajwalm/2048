@@ -18,7 +18,7 @@
         //this is constructor
         public SimulatorGame(int height, int width, Random random){
             // test for illegal Board height
-            if (height <= 2 || width <=2 || random == null) {
+            if (height < 2 || width <2 || random == null) {
                 throw new IllegalArgumentException("Invalid Inputs given");
             }
 
@@ -103,20 +103,6 @@
 
         @Override
         public boolean isMovePossible() {
-            // for (int i = 0; i < boardHeight; i++) {
-            //     for (int j = 0; j < boardWidth; j++) {
-            //         if (board[i][j] == 0) {
-            //             return true;
-            //         }
-            //         if(i > 0 && board[i][j] == board[i - 1][j]){ 
-            //             return true;
-            //         }
-            //         if (j > 0 && board[i][j] == board[i][j-1]) {
-            //             return true;
-            //         }
-            //     }
-            // }
-            // return false;
             return isMovePossible(MoveDirection.EAST) || isMovePossible(MoveDirection.NORTH) || isMovePossible(MoveDirection.WEST) || isMovePossible(MoveDirection.SOUTH);
         }
 
