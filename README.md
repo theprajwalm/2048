@@ -18,9 +18,7 @@ Welcome to the 2048 Game. This project involves implementing the popular sliding
 2. **Sliding Mechanism:** Implement the logic to slide tiles in the chosen direction.
 3. **Merging Mechanism:** Ensure tiles merge correctly when they collide.
 4. **Game End Conditions:** Determine the win and lose conditions.
-
-## Getting Started
-
+   
 ### Prerequisites
 - Java Development Kit (JDK)
 - Integrated Development Environment (IDE) such as VSCode
