@@ -63,15 +63,15 @@ public class SimulatorGame implements SimulatorInterface {
     // Counts the number of non-zero pieces on the board
     @Override
     public int getNumPieces() {
-        int count = 0;
+        int numPieces = 0;
         for (int i = 0; i < boardHeight; i++) {
             for (int j = 0; j < boardWidth; j++) {
                 if (board[i][j] != 0) {
-                    count++;
+                    numPieces++;
                 }
             }
         }
-        return count;
+        return numPieces;
     }
 
     @Override
@@ -121,9 +121,9 @@ public class SimulatorGame implements SimulatorInterface {
     // Checks if there is any empty space left on the board
     @Override
     public boolean isSpaceLeft() {
-        for (int[] row : board) {
-            for (int cell : row) {
-                if (cell == 0) {
+        for (int x = 0; x < boardWidth; x++) {
+            for (int y = 0; y < boardHeight; y++){
+                if (board[y][x] == 0) {
                     return true;
                 }
             }
